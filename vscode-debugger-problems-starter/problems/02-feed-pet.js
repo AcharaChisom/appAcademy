@@ -11,7 +11,7 @@ function feedPet(name) {
   return (food) => {
     return "Fed " + name + " " + foods.push(food) + ".";
   }
-}
+} 
 
 const feedHydra = feedPet('Hydra');
 

@@ -10,20 +10,23 @@ recycled.`
 If an item is made of aluminum or paper then it can be recycled and should
 return `Recycle Me!`
 
-*/
+*/ 
 
 
 function shouldRecycle(item) {
-  if (!item.plastic) {
-    return 'Recycle Me!'
-  } else if (item.color === 'black') {
-    return 'Currently, cannot be recycled.'
-  } else if (item.aluminum) {
-    return 'Recycle Me!'
-  } else if (item.paper) {
+  if (item.plastic) {
+    if (item.color === 'black') {
+      return 'Currently, cannot be recycled.'
+    } else {
+      return 'Recycle Me!'
+    }
+  }
+
+  if (item.aluminum || item.paper) {
     return 'Recycle Me!'
   }
-  return 'Cannot be recycled'
+
+  return 'Cannot be recycled.'
 }
 
 
