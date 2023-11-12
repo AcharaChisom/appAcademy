@@ -26,7 +26,7 @@ console.log(twoDimensionalProduct(arr2)); // 88
 */
 
 let twoDimensionalProduct = function(arr) {
-    // Your code here
+    return arr.reduce((product, subArr) => product * subArr.reduce((subProduct, num) => subProduct * num, 1), 1);
 };
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

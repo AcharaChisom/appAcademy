@@ -15,9 +15,20 @@ console.log(hasThreeVowels('dog'));             //  false
 console.log(hasThreeVowels('go home'));         //  false
 
 */
+const hasMoreThanThreeVowels = (str) => {
+    let vowels = 'aeiou';
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) {
+            count++;
+            vowels = `${vowels.replace(str[i], '')}`
+        }
+    }
+    return count >= 3;
+};
 
 let hasThreeVowels = function(string) {
-    // Your code here
+    return hasMoreThanThreeVowels(string);
 };
 
 // Your code here
@@ -28,4 +39,4 @@ try {
     module.exports = hasThreeVowels;
 } catch (e) {
     module.exports = null;
-}
+}
