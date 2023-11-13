@@ -2,7 +2,7 @@
 
 In this practice you will be debugging the provided HTML. There are a total
 of 9 bugs to fix.
-
+ 
 Your main focus is to practice identify and debug the HTML page. There are some
 errors that are obvious while others take more attention.
 
