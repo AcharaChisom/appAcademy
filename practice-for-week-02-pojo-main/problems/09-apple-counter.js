@@ -29,7 +29,7 @@ appleCounter(obj3); // => 3
 ***********************************************************************/
 
 function appleCounter(appleObj) {
-  // Your code here
+  return Object.keys(appleObj).filter(key => key.toLowerCase().includes('apple')).length;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

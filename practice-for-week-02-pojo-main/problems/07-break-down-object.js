@@ -15,7 +15,7 @@ breakDownObj(object2); // => [ 'location', 'borough', 'NY', 'Brooklyn' ]
 ***********************************************************************/
 
 function breakDownObj(obj) {
-  // Your code here
+  return [...Object.keys(obj), ...Object.values(obj)];
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

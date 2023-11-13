@@ -20,7 +20,7 @@ keyInObjectArray(objArray, 'animal'); // => false
 ***********************************************************************/
 
 function keyInObjectArray(objArray, keyString) {
-  // Your code here
+  return objArray.some(obj => obj[keyString] !== undefined);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
