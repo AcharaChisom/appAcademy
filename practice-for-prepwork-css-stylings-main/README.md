@@ -5,7 +5,7 @@ In this practice you will be using CSS to style the HTML provided.
 Your main focus is to practice using different CSS stylings to familiarize
 yourself with the vast typography, sizing, text styling and use of background
 images that CSS has to offer.
-
+ 
 ## Phase 1: CSS Styles
 
 Once you have downloaded the starter, open the __index.html__ file in your
