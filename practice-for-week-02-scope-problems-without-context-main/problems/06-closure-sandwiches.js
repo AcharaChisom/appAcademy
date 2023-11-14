@@ -18,7 +18,14 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 
 function sandwichMaker() {
-  // Your code here
+
+  let arr = ["tomato"];
+
+  return function (ingredient) {
+    arr.push(ingredient);
+    return `One sandwich with ${arr.join(" and ")}`;
+  }
+  
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

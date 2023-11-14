@@ -24,8 +24,34 @@ console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
 function recVolume(height) {
-  // Your code here
+  let count = 1;
+  let isLast = false;
+  let volume = height;
+
+  return function (num) {
+    if (count === 3) {
+      return volume;
+    } else {
+      volume *= num;
+      count++;
+
+      if (count === 3) {
+        isLast = true;
+      }
+
+      if (isLast) {
+        return volume;
+      }
+
+      return (num) => {};
+    }
+  }
 }
+
+let table1 = recVolume(5); // returns a function
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
