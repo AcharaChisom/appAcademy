@@ -37,8 +37,8 @@ let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
 console.log(result6);   // true
 *******************************************************************************/
 
-let one = function() {
-
+let one = function(array, cb) {
+    return array.filter((el, i) => cb(el, i)).length === 1;
 };
 
 
