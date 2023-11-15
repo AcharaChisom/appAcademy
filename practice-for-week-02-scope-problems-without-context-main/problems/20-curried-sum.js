@@ -43,7 +43,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  let sum = 0;
+  let count = 0;
+
+  const newFunc = (num) => {  
+    sum += num;
+    count++;
+
+    if (count === numArgs) {
+      return sum;
+    }
+
+    return newFunc;
+  }
+
+  return newFunc;
 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
