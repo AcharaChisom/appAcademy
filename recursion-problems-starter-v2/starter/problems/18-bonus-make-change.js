@@ -59,8 +59,33 @@ function greedyMakeChange(target, coins = [25, 10, 5, 1]) {
 }
 
 function makeBetterChange(target, coins = [25, 10, 5, 1]) {
-  // your code here
+  if (target === 0) return [];
+
+  let bestChange = null;
+
+  coins.forEach((coin, index) => {
+    if (coin > target) return;
+
+    let remainder = target - coin;
+    // console.log(`coin: ${coin}, remainder: ${remainder}`)
+    let bestRemainder = makeBetterChange(remainder, coins.slice(index));
+    // console.log(`remainder: ${remainder}, bestRemainder: ${bestRemainder}`)
+
+    if (!bestRemainder) return;
+
+    let change = [coin].concat(bestRemainder);
+
+    if (!bestChange || (change.length < bestChange.length)) {
+      bestChange = change;
+    }
+  });
+
+  return bestChange;
 }
+
+// console.log(makeBetterChange(21)); // [1, 10, 10]
+// console.log(makeBetterChange(75)); // [25, 25, 25]
+// console.log(makeBetterChange(33, [15, 3])); // [3, 15, 15]
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

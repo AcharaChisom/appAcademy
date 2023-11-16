@@ -12,7 +12,11 @@ reverse("id"); // "di"
 reverse(""); // ""
 ***********************************************************************/
 
-// your code here
+const reverse = (string, n = string.length) => {
+  if (n === 0) return '';
+
+  return `${string[n - 1]}${reverse(string, n - 1)}`;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

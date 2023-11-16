@@ -14,7 +14,23 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
      subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
-// your code here
+const subsets = (arr) => {
+  if (arr.length === 0) return [[]];
+
+  const first = arr[0];
+  console.log(`first`, first)
+  const withoutFirst = subsets(arr.slice(1));
+  console.log(`withoutfirst`, withoutFirst)
+  const withFirst = withoutFirst.map(sub => [first, ...sub]);
+  console.log(`withfirst`, withFirst)
+
+  return [...withoutFirst, ...withFirst];
+}
+
+// console.log(subsets([])) // [[]]
+// console.log(subsets([1])) // [[], [1]]
+// console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
+console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

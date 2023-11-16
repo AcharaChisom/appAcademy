@@ -22,7 +22,22 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  if (nums.length === 0) return sorted
+
+  let smallest = Infinity
+  let smallestIdx = 0
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < smallest) {
+      smallest = nums[i]
+      smallestIdx = i
+    }
+  }
+
+  sorted.push(smallest)
+  nums.splice(smallestIdx, 1)
+
+  return sort(nums, sorted)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

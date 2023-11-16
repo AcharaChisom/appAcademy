@@ -10,7 +10,15 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
-// your code here
+const flatten = (arr, n = 0) => {
+  if (n === arr.length) return []
+
+  if (Array.isArray(arr[n])) {
+    return flatten(arr[n]).concat(flatten(arr, n + 1))
+  }
+
+  return [arr[n]].concat(flatten(arr, n + 1))
+}
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

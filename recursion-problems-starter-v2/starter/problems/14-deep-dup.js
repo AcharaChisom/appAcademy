@@ -36,7 +36,15 @@ console.log(x[0] === y[0]) // true
 
 ***********************************************************************/
 
-// your code here
+const deepDup = (arr, n = 0) => {
+  if (n === arr.length) return []
+
+  if (Array.isArray(arr[n])) {
+    return [deepDup(arr[n]), ...deepDup(arr, n + 1)]
+  }
+
+  return [arr[n], ...deepDup(arr, n + 1)]
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

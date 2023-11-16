@@ -11,7 +11,11 @@ range(7, 6); // []
 ***********************************************************************/
 
 
-// your code here
+const range = (start, end) => {
+  if (end <= start) return []
+
+  return [start].concat(range(start + 1, end))
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

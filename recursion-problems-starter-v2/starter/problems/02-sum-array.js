@@ -10,7 +10,11 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-// your code here
+const sumArray = (array, n = 0) => {
+  if (array.length === n) return 0
+
+  return array[n] + sumArray(array, n + 1)
+}
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
