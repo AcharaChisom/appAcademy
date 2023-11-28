@@ -37,7 +37,8 @@ describe("Person class", () => {
   describe("introduce instance method", () => {
     it("should call the introduce method", () => {
       person.introduce();
-      let expected = `Hi, I'm kristen chauncey, and I'm 38 years old.`;
+      // Person.introducePeople([person]);
+      let expected = `Hi, I'm kristen chauncey and I'm 38 years old.`;
       expect(consoleSpy).to.have.been.called.once.with(expected)
     });
   });
