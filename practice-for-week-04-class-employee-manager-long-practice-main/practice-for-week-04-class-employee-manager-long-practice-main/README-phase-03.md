@@ -3,7 +3,7 @@
 Now that you have an `addEmployee(employee)` method, you should think about a 
 way to call it such that whenever an `Employee` is instantiated with a 
 `manager` in its arguments, the `Employee` is automatically added to the 
-`Manager`'s `employees` array. 
+`Manager`'s `employees` array.
 
 ## Instructions
 

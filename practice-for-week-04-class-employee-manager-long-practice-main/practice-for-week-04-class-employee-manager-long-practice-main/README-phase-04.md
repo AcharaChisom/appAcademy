@@ -74,4 +74,4 @@ console.log(raph.calculateBonus(0.05)); // => 13000
 ```
 
 Great job! If all the specs are passing and everything looks good, move on to
-the next phase!
+the next phase! 

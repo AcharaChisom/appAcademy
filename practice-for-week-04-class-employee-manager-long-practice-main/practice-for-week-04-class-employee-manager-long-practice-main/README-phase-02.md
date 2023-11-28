@@ -117,4 +117,4 @@ list.
 
 In the next phase, you will tackle handling this task dynamically. You will 
 refactor your code so that when you instantiate an `Employee`, they will add 
-themselves to their `Manager`'s `employees` list.
+themselves to their `Manager`'s `employees` list. 
