@@ -2,7 +2,7 @@ const { Room } = require('./room');
 const { Item } = require('./item');
 const { Food } = require('./food');
 const { Enemy } = require('./enemy');
-
+ 
 class World {
 
   static rooms = {};

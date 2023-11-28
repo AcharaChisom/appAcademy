@@ -1,12 +1,11 @@
 class Room {
-
   constructor(name, description) {
     this.name = name;
     this.description = description;
     this.exits = {};
     this.items = [];
   }
-
+ 
   getEnemies() {
     const { World } = require('./world');
     return World.getEnemiesInRoom(this);
@@ -52,15 +51,13 @@ class Room {
   }
 
   getItemByName(name) {
-
-    // Fill this in
-
+    return this.items.find(item => item.name === name);
   }
 
   getEnemyByName(name) {
 
     // Fill this in
-
+  }
 }
 
 module.exports = {

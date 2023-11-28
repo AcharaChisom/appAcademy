@@ -1,7 +1,7 @@
 const {Character} = require('./character');
 const {Enemy} = require('./enemy');
 const {Food} = require('./food');
-
+ 
 class Player extends Character {
 
   constructor(name, startingRoom) {
@@ -34,33 +34,39 @@ class Player extends Character {
   }
 
   takeItem(itemName) {
+    const item = this.currentRoom.getItemByName(itemName);
 
-    // Fill this in
-
+    if (item) {
+      this.items.push(item);
+      this.currentRoom.items = this.currentRoom.items.filter(item => item.name !== itemName);
+    }
   }
 
   dropItem(itemName) {
+    const item = this.getItemByName(itemName);
 
-    // Fill this in
-
+    if (item) {
+      this.items = this.items.filter(item => item.name !== itemName);
+      this.currentRoom.items.push(item);
+    }
   }
 
   eatItem(itemName) {
+    const item = this.getItemByName(itemName);
 
-    // Fill this in
-
+    if (item && item.isFood) {
+      this.items = this.items.filter(item => item.name !== itemName);
+    }
   }
 
   getItemByName(name) {
-
-    // Fill this in
-
+    return this.items.find(item => item.name === name);
   }
 
   hit(name) {
-
-    // Fill this in
-
+    this.enemies = this.currentRoom.getEnemies();
+    const enemy = this.enemies.find(enemy => enemy.name === name);
+    enemy.attackTarget = this;
   }
 
   die() {
